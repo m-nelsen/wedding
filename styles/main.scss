@@ -1,0 +1,16 @@
+$background-color: #cfcfcf;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-color;
+  padding: 18px;
+}
+
+p {
+  font-size: 5rem;
+}

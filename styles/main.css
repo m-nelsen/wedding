@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #cfcfcf;
+  padding: 18px;
+}
+
+p {
+  font-size: 5rem;
+}
+
+/*# sourceMappingURL=main.css.map */
