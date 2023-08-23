@@ -16,7 +16,6 @@ export default async function handler(
   switch (method) {
     case "GET":
       try {
-        // const registrant = await Registrant.findById(id);
         const registrant = await Registrant.find({});
 
         if (!registrant) {
@@ -30,9 +29,21 @@ export default async function handler(
 
     case "POST":
       try {
-        const { firstName, lastName } = req.body;
+        const {
+          firstName,
+          lastName,
+          attendanceStatus,
+          preferredEntree,
+          dietaryRestrictions,
+        } = req.body;
 
-        const newRegistrant = new Registrant({ firstName, lastName });
+        const newRegistrant = new Registrant({
+          firstName,
+          lastName,
+          attendanceStatus,
+          preferredEntree,
+          dietaryRestrictions,
+        });
 
         await newRegistrant.save();
 
