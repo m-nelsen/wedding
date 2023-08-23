@@ -1,4 +1,45 @@
-$background-color: #cfcfcf;
+// // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+// @import "../node_modules/bootstrap/scss/functions";
+
+// // 2. Include any default variable overrides here
+// $navbar-light-active-color: white;
+
+// // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/variables-dark";
+
+// // 4. Include any default map overrides here
+
+// // 5. Include remainder of required parts
+// @import "../node_modules/bootstrap/scss/maps";
+// @import "../node_modules/bootstrap/scss/mixins";
+// @import "../node_modules/bootstrap/scss/root";
+
+// // 6. Optionally include any other parts as needed
+// @import "../node_modules/bootstrap/scss/utilities";
+// @import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+// @import "../node_modules/bootstrap/scss/images";
+// @import "../node_modules/bootstrap/scss/containers";
+// @import "../node_modules/bootstrap/scss/grid";
+// @import "../node_modules/bootstrap/scss/helpers";
+// @import "../node_modules/bootstrap/scss/nav";
+// @import "../node_modules/bootstrap/scss/navbar";
+
+// // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+// @import "../node_modules/bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&display=swap");
+
+$navbar-light-active-color: white;
+$font-family-sans-serif: "Josefin Slab";
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$font-size-base: calc(15px + 0.390625vw);
 
 * {
   margin: 0;
@@ -6,11 +47,82 @@ $background-color: #cfcfcf;
   box-sizing: border-box;
 }
 
-body {
-  background-color: $background-color;
-  padding: 18px;
+html {
+  font-size: $font-size-base;
 }
 
-p {
-  font-size: 5rem;
+.landing {
+  background-image: url("/windmill-house-bridge-dark.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 92vh;
+  text-align: center;
+  font-family: "Parisienne";
+
+  h1 {
+    font-size: calc(8 * $font-size-base);
+  }
+
+  h2 {
+    font-size: calc(5 * $font-size-base);
+  }
 }
+
+.outlined {
+  text-shadow: -1px -1px 0 #000, 0 -1px 0 #000, 1px -1px 0 #000, 1px 0 0 #000,
+    1px 1px 0 #000, 0 1px 0 #000, -1px 1px 0 #000, -1px 0 0 #000;
+}
+
+.thickOutlined {
+  text-shadow: 0px 10px 0.02px #000, 9.8px 2.1px 0.02px #000,
+    4.2px -9.1px 0.02px #000, -8px -6px 0.02px #000, -7.6px 6.5px 0.02px #000,
+    4.8px 8.8px 0.02px #000, 9.6px -2.8px 0.02px #000, -0.7px -10px 0.02px #000,
+    -9.9px -1.5px 0.02px #000, -3.5px 9.4px 0.02px #000, 8.4px 5.4px 0.02px #000,
+    7.1px -7px 0.02px #000, -5.4px -8.4px 0.02px #000, -9.4px 3.5px 0.02px #000,
+    1.4px 9.9px 0.02px #000, 10px 0.8px 0.02px #000, 2.9px -9.6px 0.02px #000,
+    -8.7px -4.8px 0.02px #000, -6.6px 7.5px 0.02px #000, 5.9px 8px 0.02px #000,
+    9.1px -4.1px 0.02px #000, -2.1px -9.8px 0.02px #000,
+    -10px -0.1px 0.02px #000, -2.2px 9.8px 0.02px #000, 9.1px 4.2px 0.02px #000,
+    6.1px -8px 0.02px #000, -6.5px -7.6px 0.02px #000, -8.8px 4.7px 0.02px #000,
+    2.7px 9.6px 0.02px #000, 10px -0.6px 0.02px #000, 1.5px -9.9px 0.02px #000,
+    -9.3px -3.6px 0.02px #000, -5.5px 8.4px 0.02px #000, 7px 7.2px 0.02px #000,
+    8.5px -5.3px 0.02px #000, -3.4px -9.4px 0.02px #000,
+    -9.9px 1.3px 0.02px #000, -0.8px 10px 0.02px #000, 9.6px 2.9px 0.02px #000,
+    4.9px -8.7px 0.02px #000, -7.5px -6.7px 0.02px #000,
+    -8.1px 5.9px 0.02px #000, 4px 9.2px 0.02px #000, 9.8px -2px 0.02px #000,
+    0.2px -10px 0.02px #000, -9.7px -2.3px 0.02px #000, -4.3px 9px 0.02px #000,
+    7.9px 6.1px 0.02px #000;
+}
+
+nav {
+  height: 8vh;
+}
+
+.rsvp {
+  background-image: url("/table-lights.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.venue {
+  background-image: url("/windmill-house-bridge-light.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.hotels {
+  background-image: url("/hotel-lobby.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+// .full-view-height {
+//   height: 90vh;
+// }
