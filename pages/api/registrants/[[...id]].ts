@@ -1,4 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "../auth/[...nextauth]";
 import dbConnect from "../../../utils/dbConnect";
 import Registrant from "../../../models/Registrants";
 
@@ -11,11 +13,21 @@ export default async function handler(
     method,
   } = req;
 
+  const session = await getServerSession(req, res, authOptions);
+
+  const isSessionActive = () => {
+    if (!session) {
+      return res.status(401).json({ errorMessage: "Not authorized" });
+    }
+  };
+
   await dbConnect();
 
   switch (method) {
     case "GET":
       try {
+        isSessionActive();
+
         const registrant = await Registrant.find({});
 
         if (!registrant) {
@@ -55,6 +67,8 @@ export default async function handler(
 
     case "PUT":
       try {
+        isSessionActive();
+
         const registrant = await Registrant.findByIdAndUpdate(id, req.body, {
           new: true,
           runValidators: true,
@@ -70,6 +84,8 @@ export default async function handler(
 
     case "DELETE":
       try {
+        isSessionActive();
+
         const deletedRegistrant = await Registrant.deleteOne({ _id: id });
         if (!deletedRegistrant) {
           return res.status(400).json({ success: false });
