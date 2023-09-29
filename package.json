@@ -10,6 +10,7 @@
     "sass": "sass --watch styles/main.scss styles/main.css"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
     "@popperjs/core": "^2.11.8",
     "@types/node": "20.4.8",
     "@types/react": "18.2.18",
@@ -22,6 +23,7 @@
     "next-auth": "^4.23.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.46.1",
     "typescript": "5.1.6"
   },
   "devDependencies": {
