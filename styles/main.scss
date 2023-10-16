@@ -3,9 +3,9 @@
 $primary: #d9dfeb;
 $secondary: #ffffff;
 
-@import "../node_modules/bootstrap/scss/bootstrap";
+$font-size-base: 1.5rem;
 
-$font-size-base: calc(15px + 0.390625vw);
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 * {
   margin: 0;
@@ -13,12 +13,15 @@ $font-size-base: calc(15px + 0.390625vw);
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: "Forum", cursive;
+  height: 100%;
 }
 
 .countdown {
-  height: 10vh;
+  p {
+    margin: 1.4rem 0;
+  }
 
   div:nth-child(1) {
     background-color: #aec8f1;

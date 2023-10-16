@@ -20,7 +20,7 @@ const Countdown: FC = () => {
   }, [timer]);
 
   return (
-    <div className="row countdown fs-2 row-cols-1 row-cols-md-3 row-cols-lg-6">
+    <div className="row countdown row-cols-2 row-cols-md-3 row-cols-lg-6 g-0">
       <div className="col d-flex justify-content-center align-items-center">
         <p className="text-center">Wedding Countdown</p>
       </div>
