@@ -32,6 +32,8 @@ const RsvpForm: FC = () => {
   const { register, handleSubmit, formState, reset, control, trigger } =
     useForm<Inputs>({
       defaultValues: { rsvpForm: [formValues] },
+      mode: "onSubmit",
+      reValidateMode: "onSubmit",
     });
 
   const { errors, isSubmitting } = formState;
@@ -71,14 +73,14 @@ const RsvpForm: FC = () => {
                 {...register(`rsvpForm.${index}.firstName` as const, {
                   required: "First name is required",
                 })}
-                className="form-control d-inline w-50"
+                className="form-control d-inline w-50 rounded-1"
                 placeholder="First name"
               />
               <input
                 {...register(`rsvpForm.${index}.lastName` as const, {
                   required: "Last name is required",
                 })}
-                className="form-control d-inline w-50"
+                className="form-control d-inline w-50 rounded-1"
                 placeholder="Last name"
               />
 
@@ -103,7 +105,7 @@ const RsvpForm: FC = () => {
                 {...register(`rsvpForm.${index}.email` as const, {
                   required: "Email is required",
                 })}
-                className="form-control mt-4"
+                className="form-control mt-4 rounded-1"
                 type="email"
                 placeholder="Email"
               />
@@ -145,6 +147,9 @@ const RsvpForm: FC = () => {
                 <label className="form-check-label" htmlFor="declineRadio">
                   No
                 </label>
+              </div>
+              <div className="form-check">
+                <input type="number" />
               </div>
 
               <ErrorMessage
@@ -190,7 +195,7 @@ const RsvpForm: FC = () => {
                 Please list any dietary restrictions:
               </label>
               <textarea
-                className="form-control"
+                className="form-control rounded-1"
                 id="dietaryRestrictionsTextArea"
                 rows={3}
                 {...register(`rsvpForm.${index}.dietaryRestrictions` as const, {
@@ -205,7 +210,7 @@ const RsvpForm: FC = () => {
           Registering a family member or guest? Click the button below to add.
         </p>
         <button
-          className="btn border border-black rounded-0 d-block"
+          className="btn border border-black rounded-1 d-block"
           type="button"
           onClick={async () => {
             const output = await trigger("rsvpForm");
@@ -219,7 +224,7 @@ const RsvpForm: FC = () => {
         </button>
 
         <button
-          className="btn border border-black rounded-0 mt-4"
+          className="btn border border-black rounded-1 mt-4"
           disabled={isSubmitting}
           type="submit"
         >

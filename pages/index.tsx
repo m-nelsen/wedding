@@ -1,14 +1,8 @@
 import Head from "next/head";
-import RsvpForm from "../components/RsvpForm/index";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import dynamic from "next/dynamic";
-import windmillPic from "../public/windmill.jpg";
-import dualRingsPic from "../public/dual-rings.jpg";
-import daysInnHotelPic from "../public/days-inn-by-wyndham-chino-valley.jpg";
-import primroseHotelPic from "../public/primrose-inn-and-suites.jpg";
-import hassayampaHotelPic from "../public/hassayampa-inn.jpg";
-import stMichealHotelPic from "../public/hotel-st-micheal.jpg";
+import RsvpForm from "@/components/RsvpForm";
 // import { signOut } from "next-auth/react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,216 +22,205 @@ export default function Home() {
       <main>
         {/* <button onClick={() => signOut()}>Sign out</button> */}
 
-        <section className="min-vh-100 h-100 w-100 d-flex flex-column justify-content-between">
+        <section
+          className="container-md position-relative g-0"
+          style={{
+            minHeight: "600px",
+            marginTop: "2rem",
+            marginBottom: "18rem",
+          }}
+        >
           <div
             className="position-absolute h-100 w-100"
             style={{ zIndex: "-1" }}
           >
             <Image
-              src="/holding-hands-ring-bright.png"
-              style={{ objectFit: "cover", objectPosition: "60% 50%" }}
+              src="/holding-hands.webp"
+              style={{ objectFit: "cover", objectPosition: "60% 30%" }}
+              className="rounded"
               fill={true}
               priority
-              alt="Picture of a windmill next to a pond"
+              alt="Matt and Madelyne holding hands with engagement ring in view"
             />
-          </div>
-          <div></div>
-          <div className="text-center container">
-            <div className="row pb-5">
-              <div className="col">
-                <p className="fs-3">M & M</p>
-              </div>
-            </div>
-            <div className="row py-5">
-              <div className="col">
-                <h1 className="display-1">Matthew & Madelyne</h1>
-                <h2 className="display-4">
-                  We&apos;re Saying &quot;I Do&quot;
-                </h2>
-              </div>
-            </div>
-            <div className="row row-cols-1 row-cols-md-2 pt-5">
-              <div className="col">
-                <p className="fs-3">May 11, 2024 at 3:00 PM</p>
-              </div>
-              <div className="col">
-                <p className="fs-3">Windmill House Chino Valley, AZ</p>
-              </div>
-            </div>
-          </div>
-          <Countdown />
-        </section>
-
-        <section className="bg-primary">
-          <div className="container py-5">
-            <div className="row row-cols-1 row-cols-lg-2 g-5">
-              <div
-                className="col position-relative"
-                style={{ minHeight: "40vh" }}
-              >
-                <Image
-                  src={windmillPic}
-                  className="rounded-3"
-                  style={{ objectPosition: "30% 50%" }}
-                  fill={true}
-                  objectFit="cover"
-                  alt="Large windmill near a pond"
-                />
-              </div>
-              <div className="col text-center">
-                <h2 className="display-2 pb-5">Join us on our special day</h2>
-                <p className="fs-2">Date:</p>
-                <p className="fs-4">May 11, 2024 at 3:00 PM</p>
-                <p className="fs-2 pt-5">Venue:</p>
-                <p className="fs-4">Windmill House</p>
-                <p className="fs-2 pt-5">Dress Code:</p>
-                <p className="fs-4">Formal Attire</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="container py-5">
-          <div className="row">
-            <div className="col">
-              <h2 className="display-2 text-center pb-5">Nearby Hotels</h2>
-            </div>
-          </div>
-          <div className="row row-cols-1 row-cols-lg-2 g-2 g-lg-5">
-            <div className="col">
-              <div className="card">
-                <div className="ratio ratio-1x1">
-                  <Image
-                    src={daysInnHotelPic}
-                    className=""
-                    objectFit="cover"
-                    alt="Large windmill near a pond"
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">
-                    Days Inn by Wyndham Chino Valley
-                  </h5>
-                  <a
-                    href="https://www.wyndhamhotels.com/days-inn/chino-valley-arizona/days-inn-chino-valley/overview"
-                    className="btn btn-primary"
-                    target="_blank"
-                  >
-                    Visit Website
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card">
-                <Image
-                  src={primroseHotelPic}
-                  className="w-100 h-100 card-img-top"
-                  objectFit="cover"
-                  alt="Large windmill near a pond"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Primrose Inn & Suites</h5>
-                  <a
-                    href="https://primroseinnandsuites.com/"
-                    className="btn btn-primary"
-                    target="_blank"
-                  >
-                    Visit Website
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card">
-                <Image
-                  src={hassayampaHotelPic}
-                  className="w-100 h-100 card-img-top"
-                  objectFit="cover"
-                  alt="Large windmill near a pond"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Hassayampa Inn</h5>
-                  <a
-                    href="https://www.hassayampainn.com/"
-                    className="btn btn-primary"
-                    target="_blank"
-                  >
-                    Visit Website
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card">
-                <Image
-                  src={stMichealHotelPic}
-                  className="w-100 h-100 card-img-top"
-                  objectFit="cover"
-                  alt="Large windmill near a pond"
-                />
-                <div className="card-body">
-                  <h5 className="card-title">Hotel St. Micheal</h5>
-                  <a
-                    href="https://www.stmichaelhotel.com/"
-                    className="btn btn-primary"
-                    target="_blank"
-                  >
-                    Visit Website
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-primary">
-          <div className="row row-cols-1 row-cols-lg-2 pt-5 g-0 mx-auto">
-            <div className="col container">
-              <h2 className="display-2 mb-5">
-                Your presence at our wedding is the only present we require.
-              </h2>
-            </div>
-            <div className="col d-flex align-items-center container">
-              <p className="fs-4 mb-5">
-                However, if you wish to furthers bless our special day with a
-                gift, we have created an online registry at&nbsp;
-                <a href="#" className="text-black">
-                  reallygreatesite.com
-                </a>
-                .
-              </p>
-            </div>
           </div>
           <div
-            className="position-relative w-100 g-0"
-            style={{ minHeight: "45vh" }}
+            className="text-center d-flex flex-column justify-content-center align-items-center"
+            style={{ height: "600px" }}
           >
-            <Image
-              src={dualRingsPic}
-              style={{ objectPosition: "70% 70%" }}
-              fill={true}
-              quality={100}
-              objectFit="cover"
-              alt="Large windmill near a pond"
-            />
-          </div>
-        </section>
+            <h1 className="display-3">Matthew & Madelyne</h1>
+            <p className="text-uppercase middle-line w-50">Save the date</p>
+            <p className="display-6 mb-4">May 11, 2024</p>
+            <a
+              className="btn btn-secondary px-5 py-2 rounded-1 bg-light fs-4"
+              href="#rsvp"
+            >
+              RSVP
+            </a>
+            <div
+              className="position-absolute h-100 sm-width-100"
+              style={{
+                top: "91%",
+                margin: "auto",
+                zIndex: "10",
+              }}
+            >
+              <Countdown />
 
-        <section className="container">
-          <div className="row py-5 px-2">
-            <div className="col">
-              <h2 className="display-2 text-center">RSVP</h2>
-              <p className="fs-4 text-center mb-5">
-                Please RSVP by March 1st, 2024
-              </p>
-              <RsvpForm />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/hanging-leaves.webp"
+                style={{
+                  objectFit: "contain",
+                  maxWidth: "800px",
+                  maxHeight: "200px",
+                  transform: "translatey(-60px)",
+                  zIndex: "-10",
+                  position: "relative",
+                }}
+                className="px-2 w-100"
+                alt="Leaves hanging beneath the wedding countdown clock"
+              />
             </div>
           </div>
         </section>
 
-        <section className="bg-primary py-4">
-          <p className="text-center m-0">2024 M&M Wedding</p>
+        <section className="container-md position-relative join-us">
+          <div className="overlay rounded"></div>
+          <div className="row m-0 w-100">
+            <div className="col-12 col-md-4 p-0 m-0 mr-md-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/windmill.webp"
+                alt="Matt and Madelyne holding hands with engagement ring in view"
+                className="w-100 h-100 rounded"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "18% 0",
+                }}
+              />
+            </div>
+            <div className="col-12 col-md-8 p-0 m-0 p-md-1 position-relative">
+              <div className="location-info g-0">
+                <div
+                  className="position-absolute w-100 d-flex"
+                  style={{ top: "-90px" }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/dual-rings.webp"
+                    className="mx-auto"
+                    style={{ height: "auto", width: "250px" }}
+                    alt="Two intertwined wedding rings"
+                  />
+                </div>
+                <div className="text-center bg-light border border-secondary border-1 rounded py-5">
+                  <h2 className="mt-3">Join us at Windmill House</h2>
+                  <p className="fs-5 mb-2">Sunday May 11th, 2024 at 3:00pm</p>
+                  <p className="fs-5">1460 W Rd 4 N, Chino Valley, AZ 86323</p>
+                </div>
+              </div>
+              <div className="row g-0 pt-1">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/ceremony.webp"
+                  alt="Arch and chairs decorated for wedding ceremony"
+                  className="h-100 rounded"
+                  style={{ objectFit: "cover" }}
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="container position-relative"
+          style={{ marginBottom: "12rem" }}
+        >
+          <div
+            className="position-absolute h-100 w-100"
+            style={{ zIndex: "-1" }}
+          >
+            <Image
+              src="/heart-and-leaves.webp"
+              style={{
+                objectFit: "cover",
+                objectPosition: "60% 50%",
+                opacity: "6%",
+              }}
+              className="rounded"
+              fill={true}
+              priority
+              alt="Matt and Madelyne holding hands with engagement ring in view"
+            />
+          </div>
+          <div className="text-center">
+            <h2>Registry</h2>
+            <p className="m-0">
+              If you want to donate to our honeymoon fund, please visit our
+              registry.
+            </p>
+            <a
+              href="https://withjoy.com/madelyne-and-matthew/registry"
+              className="text-info"
+            >
+              https://withjoy.com/madelyne-and-matthew/registry
+            </a>
+            <p className="mt-4">
+              There will be a donation box at our wedding too.
+            </p>
+          </div>
+        </section>
+
+        <section
+          id="rsvp"
+          className="container bg-light shadow rounded mt-5 p-2"
+          style={{ marginBottom: "10rem" }}
+        >
+          <div
+            className="position-relative w-75 h-75"
+            style={{ left: "-9rem", top: "-8rem", zIndex: "-10" }}
+          >
+            <Image
+              src="/curved-branch.webp"
+              style={{
+                objectFit: "cover",
+                transform: "scale(-1, 1)",
+                position: "absolute",
+              }}
+              height={300}
+              width={300}
+              priority
+              alt="Branch of leaves curving around the RSVP form"
+            />
+          </div>
+          <div className="border border-secondary border-1 rounded p-3">
+            <h2 className="text-center">RSVP</h2>
+            <RsvpForm />
+          </div>
+          <div
+            className="position-relative w-50 h-50"
+            style={{
+              right: "-92%",
+              top: "-8rem",
+              zIndex: "10",
+            }}
+          >
+            <Image
+              src="/flower.webp"
+              style={{
+                objectFit: "cover",
+                position: "absolute",
+              }}
+              height={200}
+              width={200}
+              priority
+              alt="Flower in the bottom-right corner of the RSVP form"
+            />
+          </div>
+        </section>
+
+        <section className="container d-flex justify-content-center">
+          <p>2024 M&amp;M Wedding</p>
         </section>
       </main>
     </>

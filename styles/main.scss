@@ -1,49 +1,87 @@
-@import url("https://fonts.googleapis.com/css2?family=Forum&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost&display=swap");
 
-$primary: #d9dfeb;
-$secondary: #ffffff;
+$primary: #fffcf8;
+$secondary: #cccccc;
+$light: #ffffff;
 
-$font-size-base: 1.5rem;
+$border-radius: 1rem;
+$form-check-input-checked-color: rgb(77, 77, 77);
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
 }
 
-html, body {
-  font-family: "Forum", cursive;
-  height: 100%;
+body {
+  font-family: "Gilda Display", serif;
+  background-color: $primary;
 }
 
 .countdown {
+  font-family: "Jost", sans-serif;
+
   p {
-    margin: 1.4rem 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.middle-line {
+  display: flex;
+  flex-direction: row;
+}
+.middle-line:before,
+.middle-line:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid;
+  margin: auto;
+}
+.middle-line:before {
+  margin-right: 10px;
+}
+.middle-line:after {
+  margin-left: 10px;
+}
+
+.sm-width-100 {
+  width: 65%;
+}
+
+.join-us {
+  margin-bottom: 8rem;
+}
+
+.location-info {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  background-color: black;
+  height: 100%;
+  width: calc(100% - 1.5rem);
+  opacity: 0;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .sm-width-100 {
+    width: 100%;
   }
 
-  div:nth-child(1) {
-    background-color: #aec8f1;
+  .location-info {
+    position: absolute;
+    top: -25%;
+    width: 100%;
+    border-radius: 0px;
+    z-index: 10;
   }
 
-  div:nth-child(2) {
-    background-color: #9eb8e0;
-  }
-
-  div:nth-child(3) {
-    background-color: #94abd0;
-  }
-
-  div:nth-child(4) {
-    background-color: #8ba1c2;
-  }
-
-  div:nth-child(5) {
-    background-color: #8598b6;
-  }
-
-  div:nth-child(6) {
-    background-color: #8090aa;
+  .overlay {
+    opacity: 0.3;
   }
 }

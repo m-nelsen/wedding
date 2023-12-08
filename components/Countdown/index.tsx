@@ -20,24 +20,28 @@ const Countdown: FC = () => {
   }, [timer]);
 
   return (
-    <div className="row countdown row-cols-2 row-cols-md-3 row-cols-lg-6 g-0">
-      <div className="col d-flex justify-content-center align-items-center">
-        <p className="text-center">Wedding Countdown</p>
-      </div>
-      <div className="col d-flex justify-content-center align-items-center">
-        <p>{timeUntilWedding.getMonth()} Months</p>
-      </div>
-      <div className="col d-flex justify-content-center align-items-center">
-        <p>{timeUntilWedding.getDay()} Days</p>
-      </div>
-      <div className="col d-flex justify-content-center align-items-center">
-        <p>{timeUntilWedding.getHours()} Hours</p>
-      </div>
-      <div className="col d-flex justify-content-center align-items-center">
-        <p>{timeUntilWedding.getMinutes()} Minutes</p>
-      </div>
-      <div className="col d-flex justify-content-center align-items-center">
-        <p>{timeUntilWedding.getSeconds()} Seconds</p>
+    <div className="bg-light shadow p-1 rounded">
+      <div className="row countdown d-flex justify-content-between row-cols-xs-2 row-cols-6 g-0 border border-secondary border-1 rounded m-2 px-5">
+        <div className="col d-flex flex-column justify-content-center align-items-center px-4 fs-5 py-2">
+          <p className="fs-3">{timeUntilWedding.getMonth()}</p>
+          <p className="fs-6">Months</p>
+        </div>
+        <div className="col d-flex flex-column justify-content-center align-items-center px-4 fs-5">
+          <p className="fs-3">{timeUntilWedding.getDay()}</p>
+          <p className="fs-6">Days</p>
+        </div>
+        <div className="col d-flex flex-column justify-content-center align-items-center px-4 fs-5">
+          <p className="fs-3">{timeUntilWedding.getHours()}</p>
+          <p className="fs-6">Hours</p>
+        </div>
+        <div className="col d-flex flex-column justify-content-center align-items-center px-4 fs-5">
+          <p className="fs-3">{timeUntilWedding.getMinutes()}</p>
+          <p className="fs-6">Minutes</p>
+        </div>
+        <div className="col d-flex flex-column justify-content-center align-items-center px-4 fs-5">
+          <p className="fs-3">{timeUntilWedding.getSeconds()}</p>
+          <p className="fs-6">Seconds</p>
+        </div>
       </div>
     </div>
   );
