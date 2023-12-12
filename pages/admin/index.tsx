@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 interface IRegistrant {
   _id: string;
@@ -8,6 +8,7 @@ interface IRegistrant {
   attendanceStatus: boolean;
   preferredEntree: string;
   dietaryRestrictions: string;
+  guest: [];
   [key: string]: any;
 }
 
@@ -38,6 +39,8 @@ export default function Home() {
       });
   };
 
+  console.log("registrants: ", registrants);
+
   return (
     <>
       <Head>
@@ -51,9 +54,7 @@ export default function Home() {
           <table className="table table-striped">
             <thead>
               <tr>
-                <th scope="col">ID</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
+                <th scope="col">Name</th>
                 <th scope="col">Attending?</th>
                 <th scope="col">Preferred Entree</th>
                 <th scope="col">Dietary Restrictions</th>
@@ -68,30 +69,56 @@ export default function Home() {
                   attendanceStatus,
                   preferredEntree,
                   dietaryRestrictions,
+                  guests,
                 } = registrant;
 
                 return (
-                  <tr key={_id}>
-                    <th scope="row">{_id}</th>
-                    <td>{firstName}</td>
-                    <td>{lastName}</td>
-                    <td>{attendanceStatus ? "Yes" : "No"}</td>
-                    <td>{preferredEntree}</td>
-                    <td>{dietaryRestrictions}</td>
-                    <td>
-                      <div className="btn-group">
-                        <button
-                          type="button"
-                          className="btn btn-danger"
-                          onClick={(e) => {
-                            onDelete(e, _id);
-                          }}
-                        >
-                          Delete
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
+                  <Fragment key={_id}>
+                    <tr>
+                      <td scope="row">{`${firstName} ${lastName}`}</td>
+                      <td>{attendanceStatus ? "Yes" : "No"}</td>
+                      <td>{preferredEntree}</td>
+                      <td>{dietaryRestrictions}</td>
+                      <td>
+                        <div className="btn-group">
+                          <button
+                            type="button"
+                            className="btn btn-danger"
+                            onClick={(e) => {
+                              onDelete(e, _id);
+                            }}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    {guests &&
+                      guests.length > 0 &&
+                      guests.map((guest: any, index: number) => {
+                        return (
+                          <tr key={`guest-${index}`}>
+                            <td scope="row">{`${guest.firstName} ${guest.lastName}`}</td>
+                            <td>Yes - Guest</td>
+                            <td>{guest.preferredEntree}</td>
+                            <td>{guest.dietaryRestrictions}</td>
+                            <td>
+                              <div className="btn-group">
+                                <button
+                                  type="button"
+                                  className="btn btn-danger"
+                                  onClick={(e) => {
+                                    onDelete(e, _id);
+                                  }}
+                                >
+                                  Delete
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                  </Fragment>
                 );
               })}
             </tbody>

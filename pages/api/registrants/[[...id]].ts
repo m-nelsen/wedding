@@ -41,27 +41,25 @@ export default async function handler(
 
     case "POST":
       try {
-        JSON.parse(req.body).forEach(async (data: any) => {
-          console.log("DATA: ", data);
+        const {
+          firstName,
+          lastName,
+          attendanceStatus,
+          preferredEntree,
+          dietaryRestrictions,
+          guests = [],
+        } = req.body;
 
-          const {
-            firstName,
-            lastName,
-            attendanceStatus,
-            preferredEntree,
-            dietaryRestrictions,
-          } = data;
-
-          const newRegistrant = new Registrant({
-            firstName,
-            lastName,
-            attendanceStatus,
-            preferredEntree,
-            dietaryRestrictions,
-          });
-
-          await newRegistrant.save();
+        const newRegistrant = new Registrant({
+          firstName,
+          lastName,
+          attendanceStatus,
+          preferredEntree,
+          dietaryRestrictions,
+          guests,
         });
+
+        await newRegistrant.save();
 
         res.status(200).json({ success: true });
       } catch (error) {
