@@ -56,13 +56,9 @@ const RsvpForm: FC = () => {
   const onSubmit: SubmitHandler<Inputs> = (data: FieldValues) => {
     console.log("submit | data: ", data);
 
-    const jsonData = JSON.stringify(data);
-
-    console.log("JSON Data: ", jsonData);
-
     fetch("/api/registrants", {
       method: "POST",
-      body: JSON.stringify(jsonData),
+      body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
       },
@@ -291,8 +287,8 @@ const RsvpForm: FC = () => {
 
         <div>
           <p className="mt-4 mb-1">
-            Please limit uninvited guests to one person, but feel free to
-            RSVP invited family members as additional guests.
+            Please limit uninvited guests to one person, but feel free to RSVP
+            invited family members as additional guests.
           </p>
           <button
             className="btn border border-black rounded-1"
