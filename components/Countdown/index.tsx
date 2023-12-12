@@ -40,7 +40,7 @@ const Countdown: FC = () => {
       minutes: _minutes,
       seconds: _seconds,
     });
-  }, [timer]);
+  }, [timer, weddingDate]);
 
   return (
     <div className="bg-light shadow p-1 rounded">
