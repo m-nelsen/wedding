@@ -12,8 +12,6 @@ const Countdown: FC = () => {
   });
   const [timer, setTimer] = useState(0);
 
-  const weddingDate = new Date("2024-05-11T15:00:00.000-07:00");
-
   useEffect(() => {
     const timerClock = setTimeout(() => {
       setTimer(timer - 1);
@@ -25,6 +23,8 @@ const Countdown: FC = () => {
   }, [timer]);
 
   useEffect(() => {
+    const weddingDate = new Date("2024-05-11T15:00:00.000-07:00");
+
     let {
       months: _months,
       days: _days,
@@ -40,7 +40,7 @@ const Countdown: FC = () => {
       minutes: _minutes,
       seconds: _seconds,
     });
-  }, [timer, weddingDate]);
+  }, [timer]);
 
   return (
     <div className="bg-light shadow p-1 rounded">
