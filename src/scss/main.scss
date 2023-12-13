@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost&display=swap");
+
+$primary: #fffcf8;
+$secondary: #cccccc;
+$light: #ffffff;
+
+$border-radius: 1rem;
+$form-check-input-checked-color: rgb(77, 77, 77);
+$input-focus-border-color: $secondary;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: "Gilda Display", serif;
+  background-color: $primary;
+}
+
+.countdown {
+  font-family: "Jost", sans-serif;
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.middle-line {
+  display: flex;
+  flex-direction: row;
+}
+.middle-line:before,
+.middle-line:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 1px solid;
+  margin: auto;
+}
+.middle-line:before {
+  margin-right: 10px;
+}
+.middle-line:after {
+  margin-left: 10px;
+}
+
+.sm-width-100 {
+  width: 65%;
+}
+
+.join-us {
+  margin-bottom: 8rem;
+}
+
+.location-info {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  background-color: black;
+  height: 100%;
+  width: calc(100% - 1.5rem);
+  opacity: 0;
+  z-index: 5;
+}
+
+@media (max-width: 768px) {
+  .sm-width-100 {
+    width: 100%;
+  }
+
+  .location-info {
+    position: absolute;
+    top: -25%;
+    width: 100%;
+    border-radius: 0px;
+    z-index: 10;
+  }
+
+  .overlay {
+    opacity: 0.3;
+  }
+}
