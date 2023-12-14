@@ -245,13 +245,16 @@ const RsvpForm: FC = () => {
                   <input
                     className="form-check-input"
                     type="radio"
-                    id="primeRibRadio"
+                    id={`primeRibRadio-${index}`}
                     {...register(`guests.${index}.preferredEntree`, {
                       required: false,
                     })}
                     value="Prime Rib"
                   />
-                  <label className="form-check-label" htmlFor="primeRibRadio">
+                  <label
+                    className="form-check-label"
+                    htmlFor={`primeRibRadio-${index}`}
+                  >
                     Prime Rib
                   </label>
                 </div>
@@ -259,13 +262,16 @@ const RsvpForm: FC = () => {
                   <input
                     className="form-check-input"
                     type="radio"
-                    id="bbqChickenRadio"
+                    id={`bbqChickenRadio-${index}`}
                     {...register(`guests.${index}.preferredEntree`, {
                       required: false,
                     })}
                     value="BBQ Chicken"
                   />
-                  <label className="form-check-label" htmlFor="bbqChickenRadio">
+                  <label
+                    className="form-check-label"
+                    htmlFor={`bbqChickenRadio-${index}`}
+                  >
                     BBQ Chicken
                   </label>
                 </div>
