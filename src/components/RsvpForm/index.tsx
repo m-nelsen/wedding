@@ -1,4 +1,4 @@
-import { FC, Fragment, useEffect } from "react";
+import { FC, Fragment } from "react";
 import {
   useForm,
   SubmitHandler,
@@ -40,7 +40,8 @@ const RsvpForm: FC = () => {
     dietaryRestrictions: "",
   };
 
-  const { register, handleSubmit, formState, control, watch } = useForm<any>({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { register, handleSubmit, formState, control } = useForm<any>({
     defaultValues: formValues,
     mode: "onSubmit",
     reValidateMode: "onSubmit",
@@ -48,15 +49,14 @@ const RsvpForm: FC = () => {
 
   const { errors, isSubmitting } = formState;
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const { fields, append, remove } = useFieldArray<any>({
     name: "guests",
     control,
   });
 
   const onSubmit: SubmitHandler<Inputs> = (data: FieldValues) => {
-    console.log("submit | data: ", data);
-
-    fetch("/api/registrants", {
+    fetch(import.meta.env.VITE_API_BASE_ROUTE, {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
