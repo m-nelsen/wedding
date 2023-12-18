@@ -8,6 +8,8 @@ $border-radius: 1rem;
 $form-check-input-checked-color: rgb(77, 77, 77);
 $input-focus-border-color: $secondary;
 
+$location-info-height: 320px;
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 html,
@@ -19,6 +21,10 @@ body {
 body {
   font-family: "Gilda Display", serif;
   background-color: $primary;
+}
+
+.landing {
+  margin-bottom: 18rem;
 }
 
 .countdown {
@@ -52,12 +58,26 @@ body {
   width: 65%;
 }
 
+.hanging-leaves {
+  object-fit: contain;
+  max-width: 800px;
+  max-height: 200px;
+  transform: translateY(-60px);
+  z-index: -10;
+  position: relative;
+}
+
 .join-us {
   margin-bottom: 8rem;
 }
 
 .location-info {
   position: relative;
+}
+
+.location-bottom-row {
+  margin-top: 0;
+  padding-top: 0.25rem;
 }
 
 .overlay {
@@ -74,12 +94,21 @@ body {
     width: 100%;
   }
 
+  .hanging-leaves {
+    transform: translateY(0);
+  }
+
   .location-info {
     position: absolute;
-    top: -25%;
+    height: $location-info-height;
     width: 100%;
     border-radius: 0px;
     z-index: 10;
+  }
+
+  .location-bottom-row {
+    margin-top: $location-info-height;
+    padding-top: 0;
   }
 
   .overlay {

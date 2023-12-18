@@ -44,7 +44,7 @@ const Countdown: FC = () => {
 
   return (
     <div className="bg-light shadow p-1 rounded">
-      <div className="row countdown d-flex justify-content-between row-cols-xs-2 row-cols-6 g-0 border border-secondary border-1 rounded m-2 px-5">
+      <div className="row countdown d-flex justify-content-between row-cols-xs-2 row-cols-6 g-0 border border-secondary border-1 rounded px-1">
         <div className="col d-flex flex-column justify-content-center align-items-center px-4 fs-5 py-2">
           <p className="fs-3">
             {countdownDates.months >= 0 ? countdownDates.months : 0}

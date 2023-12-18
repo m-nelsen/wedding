@@ -6,11 +6,10 @@ function App() {
   return (
     <main>
       <section
-        className="container-md position-relative g-0"
+        className="container-md position-relative g-0 landing"
         style={{
           minHeight: "600px",
           marginTop: "2rem",
-          marginBottom: "18rem",
         }}
       >
         <div className="position-absolute h-100 w-100" style={{ zIndex: "-1" }}>
@@ -38,7 +37,7 @@ function App() {
             RSVP
           </a>
           <div
-            className="position-absolute h-100 sm-width-100"
+            className="position-absolute sm-width-100"
             style={{
               top: "91%",
               margin: "auto",
@@ -49,15 +48,7 @@ function App() {
 
             <img
               src="/hanging-leaves.webp"
-              style={{
-                objectFit: "contain",
-                maxWidth: "800px",
-                maxHeight: "200px",
-                transform: "translatey(-60px)",
-                zIndex: "-10",
-                position: "relative",
-              }}
-              className="px-2 w-100"
+              className="px-2 w-100 hanging-leaves"
               alt="Leaves hanging beneath the wedding countdown clock"
             />
           </div>
@@ -66,7 +57,7 @@ function App() {
 
       <section className="container-md position-relative join-us">
         <div className="overlay rounded"></div>
-        <div className="row m-0 w-100">
+        <div className="row bg-primary m-0 w-100">
           <div className="col-12 col-md-4 p-0 m-0 mr-md-2">
             <img
               src="/windmill.webp"
@@ -91,13 +82,13 @@ function App() {
                   alt="Two intertwined wedding rings"
                 />
               </div>
-              <div className="text-center bg-light border border-secondary border-1 rounded py-5">
+              <div className="text-center bg-light border border-secondary border-1 h-100 rounded py-5 px-1 d-flex flex-column justify-content-center join-us-info">
                 <h2 className="mt-3">Join us at Windmill House</h2>
                 <p className="fs-5 mb-2">Sunday May 11th, 2024 at 3:00pm</p>
                 <p className="fs-5">1460 W Rd 4 N, Chino Valley, AZ 86323</p>
               </div>
             </div>
-            <div className="row g-0 pt-1">
+            <div className="row g-0 location-bottom-row">
               <img
                 src="/ceremony.webp"
                 alt="Arch and chairs decorated for wedding ceremony"
