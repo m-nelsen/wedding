@@ -80,6 +80,10 @@ body {
   padding-top: 0.25rem;
 }
 
+.dual-rings {
+  display: flex;
+}
+
 .overlay {
   position: absolute;
   background-color: black;
@@ -109,6 +113,10 @@ body {
   .location-bottom-row {
     margin-top: $location-info-height;
     padding-top: 0;
+  }
+
+  .dual-rings {
+    display: none;
   }
 
   .overlay {

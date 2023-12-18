@@ -56,7 +56,6 @@ function App() {
       </section>
 
       <section className="container-md position-relative join-us">
-        <div className="overlay rounded"></div>
         <div className="row bg-primary m-0 w-100">
           <div className="col-12 col-md-4 p-0 m-0 mr-md-2">
             <img
@@ -72,7 +71,7 @@ function App() {
           <div className="col-12 col-md-8 p-0 m-0 p-md-1 position-relative">
             <div className="location-info g-0">
               <div
-                className="position-absolute w-100 d-flex"
+                className="position-absolute w-100 dual-rings"
                 style={{ top: "-90px" }}
               >
                 <img
@@ -84,7 +83,7 @@ function App() {
               </div>
               <div className="text-center bg-light border border-secondary border-1 h-100 rounded py-5 px-1 d-flex flex-column justify-content-center join-us-info">
                 <h2 className="mt-3">Join us at Windmill House</h2>
-                <p className="fs-5 mb-2">Sunday May 11th, 2024 at 3:00pm</p>
+                <p className="fs-5 mb-2">Saturday May 11th, 2024 at 3:00pm</p>
                 <p className="fs-5">1460 W Rd 4 N, Chino Valley, AZ 86323</p>
               </div>
             </div>
