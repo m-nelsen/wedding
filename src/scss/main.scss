@@ -23,6 +23,14 @@ body {
   background-color: $primary;
 }
 
+.btn:hover {
+  background-color: #cecece;
+}
+
+.btn:active {
+  background-color: #9e9e9e;
+}
+
 .landing {
   margin-bottom: 18rem;
 }
