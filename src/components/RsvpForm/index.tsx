@@ -320,7 +320,7 @@ const RsvpForm: FC = () => {
           </p>
           <button
             className="btn border border-black rounded-1"
-            disabled={isSubmitSuccessful}
+            disabled={isSubmitSuccessful && formSubmitStatus === 201}
             type="button"
             onClick={() => {
               append({
@@ -337,7 +337,7 @@ const RsvpForm: FC = () => {
 
         <button
           className="btn border border-black rounded-1 mt-4"
-          disabled={isSubmitSuccessful}
+          disabled={isSubmitSuccessful && formSubmitStatus === 201}
           type="submit"
         >
           <span role="status">Submit</span>
@@ -349,7 +349,7 @@ const RsvpForm: FC = () => {
           )}
         </button>
 
-        {isSubmitSuccessful && formSubmitStatus === 201 && (
+        {formSubmitStatus === 201 && (
           <>
             {alertIcon}
             <div
@@ -369,7 +369,7 @@ const RsvpForm: FC = () => {
             </div>
           </>
         )}
-        {isSubmitSuccessful && formSubmitStatus !== 201 && (
+        {formSubmitStatus !== null && formSubmitStatus !== 201 && (
           <>
             {alertIcon}
             <div
