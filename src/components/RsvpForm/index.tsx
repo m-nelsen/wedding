@@ -144,7 +144,7 @@ const RsvpForm: FC = () => {
               type="radio"
               id="acceptRadio"
               {...register(`attendanceStatus`, {
-                required: true,
+                required: "Selection is required",
               })}
               value="true"
             />
@@ -158,7 +158,7 @@ const RsvpForm: FC = () => {
               type="radio"
               id="declineRadio"
               {...register(`attendanceStatus`, {
-                required: "Response is required",
+                required: "Selection is required",
               })}
               value="false"
             />
@@ -170,7 +170,7 @@ const RsvpForm: FC = () => {
           <ErrorMessage
             errors={errors}
             name={`attendanceStatus`}
-            message="Attendence response is required"
+            message="Selection is required"
             as={<div className="invalid-feedback d-inline-block"></div>}
           />
 
@@ -181,7 +181,7 @@ const RsvpForm: FC = () => {
               type="radio"
               id="primeRibRadio"
               {...register(`preferredEntree`, {
-                required: false,
+                required: "Selection is required",
               })}
               value="Prime Rib"
             />
@@ -195,7 +195,7 @@ const RsvpForm: FC = () => {
               type="radio"
               id="bbqChickenRadio"
               {...register(`preferredEntree`, {
-                required: false,
+                required: "Selection is required",
               })}
               value="BBQ Chicken"
             />
@@ -203,6 +203,13 @@ const RsvpForm: FC = () => {
               BBQ Chicken
             </label>
           </div>
+
+          <ErrorMessage
+            errors={errors}
+            name={`preferredEntree`}
+            message="Selection is required"
+            as={<div className="invalid-feedback d-inline-block"></div>}
+          />
 
           <label className="mt-4">Please list any dietary restrictions:</label>
           <textarea
@@ -269,7 +276,7 @@ const RsvpForm: FC = () => {
                     type="radio"
                     id={`primeRibRadio-${index}`}
                     {...register(`guests.${index}.preferredEntree`, {
-                      required: false,
+                      required: "Selection is required",
                     })}
                     value="Prime Rib"
                   />
@@ -286,7 +293,7 @@ const RsvpForm: FC = () => {
                     type="radio"
                     id={`bbqChickenRadio-${index}`}
                     {...register(`guests.${index}.preferredEntree`, {
-                      required: false,
+                      required: "Selection is required",
                     })}
                     value="BBQ Chicken"
                   />
@@ -297,7 +304,17 @@ const RsvpForm: FC = () => {
                     BBQ Chicken
                   </label>
                 </div>
-                <label className="mt-4">
+
+                <ErrorMessage
+                  errors={errors}
+                  name={`guests.${index}.preferredEntree`}
+                  message="Selection is required"
+                  as={
+                    <div className="invalid-feedback d-inline-block w-50"></div>
+                  }
+                />
+
+                <label className="mt-4 w-100">
                   Please list any dietary restrictions:
                 </label>
                 <textarea
