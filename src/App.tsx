@@ -99,37 +99,39 @@ function App() {
         </div>
       </section>
 
-      <section
-        className="container position-relative"
-        style={{ marginBottom: "12rem" }}
-      >
-        <div className="position-absolute h-100 w-100" style={{ zIndex: "-1" }}>
-          <img
-            src="/heart-and-leaves.webp"
-            style={{
-              objectFit: "cover",
-              objectPosition: "60% 50%",
-              opacity: "6%",
-            }}
-            className="w-100 h-100 rounded"
-            alt="Hearts and leaves"
-          />
-        </div>
-        <div className="text-center">
-          <h2>Registry</h2>
-          <p className="m-0">
-            If you want to donate to our honeymoon fund, please visit our
-            registry.
-          </p>
-          <a
-            href="https://withjoy.com/madelyne-and-matthew/registry"
-            className="text-info"
+      <section className="container" style={{ marginBottom: "12rem" }}>
+        <div className="position-relative">
+          <div
+            className="position-absolute h-100 w-100"
+            style={{ zIndex: "-1" }}
           >
-            https://withjoy.com/madelyne-and-matthew/registry
-          </a>
-          <p className="mt-4">
-            There will be a donation box at our wedding too.
-          </p>
+            <img
+              src="/heart-and-leaves.webp"
+              style={{
+                objectFit: "cover",
+                objectPosition: "60% 50%",
+                opacity: "6%",
+              }}
+              className="w-100 h-100 rounded"
+              alt="Hearts and leaves"
+            />
+          </div>
+          <div className="text-center">
+            <h2>Registry</h2>
+            <p className="m-0">
+              If you want to donate to our honeymoon fund, please visit our
+              registry.
+            </p>
+            <a
+              href="https://withjoy.com/madelyne-and-matthew/registry"
+              className="text-info"
+            >
+              https://withjoy.com/madelyne-and-matthew/registry
+            </a>
+            <p className="mt-4">
+              There will be a donation box at our wedding too.
+            </p>
+          </div>
         </div>
       </section>
 
